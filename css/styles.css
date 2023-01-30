@@ -19,6 +19,7 @@
   --primery-btn-hover: #404BBF;
   --link-color: #2E2F42;
   --address-link-color: #434455;
+  --backdrop-color: rgba(46, 47, 66, 0.4);
   /* secondary btn */
   --secondary-btn-text-color: #4D5AE5;
   --secondary-btn-bgc: #F4F4FD;
@@ -43,6 +44,7 @@
   --accent: #4D5AE5;
   --hover: #404BBF;
   --cloud: #F4F4FD;
+
 
 }
 
@@ -157,12 +159,27 @@ p{
 }
 
 .nav .link.active {
-  color: var(--primery-brand-color);
+  color: var(--nav-hover-color);
+
+  position: relative;
 }
 
-.nav .link.active:hover {
-  color: var(--nav-hover-color);
+
+
+.link.active::after{
+  content: '';
+  
+  position: absolute;
+bottom: -3px;
+left: 50%;
+transform: translate(-50%,-50%);
+
+  width: 100%;
+  height: 4px;
+  background-color: var(--hover);
+  border-radius: 2px;
 }
+
 
 /* Address */
 
@@ -656,8 +673,8 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
-.portfolio-thumb:hover .thumb-text,
-.portfolio-thumb:hover::before{
+.portfolio-link:hover .thumb-text,
+.portfolio-link:hover .portfolio-thumb::before{
   transform: translateY(0%);
   
 }
@@ -665,3 +682,44 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 
 /* Portfolio Animation */
+
+
+
+
+/* Modal */
+.backdrop{
+  position:fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--backdrop-color)
+
+  
+}
+
+.backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+
+  
+}
+
+.modal{
+  position: absolute;
+
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 408px;
+  min-height: 576px;
+  
+ 
+
+  background-color: #FCFCFC;
+  
+
+
+}
