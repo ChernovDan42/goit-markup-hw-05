@@ -19,7 +19,7 @@
   --primery-btn-hover: #404BBF;
   --link-color: #2E2F42;
   --address-link-color: #434455;
-  --backdrop-color: rgba(46, 47, 66, 0.4);
+  
   /* secondary btn */
   --secondary-btn-text-color: #4D5AE5;
   --secondary-btn-bgc: #F4F4FD;
@@ -44,7 +44,9 @@
   --accent: #4D5AE5;
   --hover: #404BBF;
   --cloud: #F4F4FD;
-
+/* Modal */
+--backdrop-color: rgba(46, 47, 66, 0.4);
+--modal-bgc: #FCFCFC;
 
 }
 
@@ -104,7 +106,7 @@ p{
 .site-nav .link{
   display: block;
   padding-top: 24px;
-  padding-bottom: 24px;
+  padding-bottom: 28px;
 }
 
 .site-nav>.nav-link:not(:last-child){
@@ -170,7 +172,7 @@ p{
   content: '';
   
   position: absolute;
-bottom: -3px;
+  bottom: -3px;
 left: 50%;
 transform: translate(-50%,-50%);
 
@@ -718,7 +720,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
  
 
-  background-color: #FCFCFC;
+  background-color: var(--modal-bgc)
   
 
 
